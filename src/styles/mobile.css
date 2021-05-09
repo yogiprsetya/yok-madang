@@ -1,0 +1,34 @@
+@media screen and (min-width: 500px) {
+	.menu-mobile {
+		display: none
+	}
+
+	.menu-mobile .nav {
+		display: none
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.menu {
+		display: none
+	}
+
+	.menu-mobile .nav {
+		z-index: 9;
+		background-color: #fff;
+		width: 100%;
+		position: absolute;
+		transform: translate(-100%, 0);
+		transition: transform 0.3s ease
+	}
+
+	.menu-mobile .nav.open {
+		transform: translate(0, 0)
+	}
+
+	.menu-mobile .nav-item {
+		display: list-item;
+		color: #222;
+		width: 100%;
+	}
+}

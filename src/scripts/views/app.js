@@ -1,4 +1,4 @@
-import DrawerInitiator from '../utilities/drawer';
+import DrawerInit from '../utilities/drawer';
 import UrlParser from '../utilities/url-parser';
 import routes from '../routes';
 
@@ -12,7 +12,7 @@ class App {
   }
 
   _initialAppShell() {
-    DrawerInitiator.init({
+    DrawerInit.init({
       menu: this._menu,
       drawer: this._drawer,
       content: this._content,
@@ -21,6 +21,7 @@ class App {
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
+
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();

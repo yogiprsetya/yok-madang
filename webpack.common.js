@@ -1,7 +1,8 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const swPlugin = require('serviceworker-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv').config();
 const path = require('path');
 
 module.exports = {
@@ -22,7 +23,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed)
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',

@@ -1,0 +1,30 @@
+/* RESET */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* SKIP LINK */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	padding: 10px;
+	font-size: 20px;
+	z-index: 100;
+	text-decoration: none
+}
+
+.skip-link:focus {
+	top: 100px
+}

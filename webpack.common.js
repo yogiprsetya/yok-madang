@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const swPlugin = require('serviceworker-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
@@ -11,19 +13,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
-      },
+        test: /\.s[ac]ss$/i,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+      }, {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [ 'file-loader' ]
+      }
     ],
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
@@ -36,5 +35,8 @@ module.exports = {
         },
       ],
     }),
+    new swPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/service-worker.js'),
+    })
   ],
 };

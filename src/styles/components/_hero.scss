@@ -1,0 +1,29 @@
+/* HERO SECTION */
+.hero {
+	display: flex;
+	align-items: center;
+	min-height: 380px;
+	width: 100%;
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-inner {
+	margin: 0 auto;
+	max-width: 800px
+}
+
+.hero-title {
+	color: #fff;
+	font-weight: 600;
+	font-size: 3rem;
+}
+
+.hero-text {
+	color: #fff;
+	margin-top: 16px;
+	font-size: 1.8rem;
+	font-weight: 600;
+}

@@ -1,6 +1,5 @@
 import 'regenerator-runtime';
-import '../styles/main.css';
-import '../styles/mobile.css';
+import '../styles/main.scss';
 import data from '../DATA.json';
 
 const menu = document.querySelector('#menu');

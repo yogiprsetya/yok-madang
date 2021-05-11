@@ -1,5 +1,6 @@
 import UrlParser from '../../utilities/url-parser';
 import getRestaurants from '../../services/get-restaurant';
+import LikeBtnInit from '../../utilities/save-button';
 
 const { BASE_IMAGE_URL } = process.env;
 
@@ -7,7 +8,6 @@ const Detail = {
   async render() {
     return `
       <div id="restaurant" class="restaurant"></div>
-      <div id="like-button-container"></div>
     `;
   },
 
@@ -29,6 +29,7 @@ const Detail = {
         </div>
 
         <div class="restaurant-content">
+          <div id="save-btn-container"></div>
           <p class="restaurant-location">${restaurant.address}, ${restaurant.city}</p>
           <p class="restaurant-description">${restaurant.description}</p>
 
@@ -61,17 +62,17 @@ const Detail = {
       </div>
     `;
 
-    // LikeButtonInitiator.init({
-    //   likeButtonContainer: document.querySelector('#like-button-container'),
-    //   restaurant: {
-    //     id: restaurant.id,
-    //     name: restaurant.name,
-    //     description: restaurant.description,
-    //     pictureId: restaurant.pictureId,
-    //     city: restaurant.city,
-    //     rating: restaurant.rating,
-    //   },
-    // });
+    LikeBtnInit.init({
+      likeButtonContainer: document.getElementById('save-btn-container'),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        city: restaurant.city,
+        rating: restaurant.rating,
+      },
+    });
   },
 };
 

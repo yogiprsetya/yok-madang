@@ -30,12 +30,26 @@
 
 .resto {
 	margin-bottom: 3rem;
-}
 
-.resto-img {
-	width: 100%;
-	height: 18rem;
-	object-fit: cover;
+	&-img {
+		width: 100%;
+		height: 18rem;
+		object-fit: cover;
+	}
+
+	&-name {
+		padding: 7px 0;
+
+		a {
+			text-decoration: none;
+			color: #be0000;
+			font-size: 25px;
+			min-width: 44px;
+			min-height: 44px;
+			line-height: 44px;
+			display: inline-block;
+		}
+	}
 }
 
 .rating {
@@ -45,16 +59,13 @@
 	margin-bottom: 0.5rem;
 }
 
-.resto-name {
-	padding: 7px 0;
-}
+#save-btn-container {
+	display: flex;
+	justify-content: end;
 
-.resto-name a {
-	text-decoration: none;
-	color: #be0000;
-	font-size: 25px;
-	min-width: 44px;
-	min-height: 44px;
-	line-height: 44px;
-	display: inline-block;
+	.like {
+		width: 50px;
+		background: 0;
+		border: 0;
+	}
 }

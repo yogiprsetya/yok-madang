@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
 });
 
 document.querySelectorAll('#nav-list').forEach(el => el.innerHTML = `
-  <li class="nav-item"><a href="">Home</a></li>
-  <li class="nav-item"><a href="#">Favorite</a></li>
+  <li class="nav-item"><a href="/">Home</a></li>
+  <li class="nav-item"><a href="#/favorit">Favorite</a></li>
   <li class="nav-item"><a target="_blank" href="https://github.com/yogiprsetya">About Us</a></li>
 `);

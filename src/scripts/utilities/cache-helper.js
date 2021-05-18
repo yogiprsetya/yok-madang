@@ -9,7 +9,7 @@ const CacheHelper = {
 
     cacheNames
       .filter(name => name !== process.env.CACHE_NAME)
-      .map((filteredName) => caches.delete(filteredName));
+      .map(filteredName => caches.delete(filteredName));
   },
 
   async revalidateCache(request) {
@@ -37,7 +37,7 @@ const CacheHelper = {
   async _addCache(request) {
     const cache = await this._openCache();
     cache.add(request);
-  }
+  },
 };
 
 export default CacheHelper;

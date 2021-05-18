@@ -18,8 +18,12 @@ window.addEventListener('load', () => {
   swRegister();
 });
 
-document.querySelectorAll('#nav-list').forEach(el => el.innerHTML = `
-  <li class="nav-item"><a href="/">Home</a></li>
-  <li class="nav-item"><a href="#/favorit">Favorite</a></li>
-  <li class="nav-item"><a target="_blank" href="https://github.com/yogiprsetya">About Us</a></li>
-`);
+document.querySelectorAll('#nav-list').forEach(el => {
+  const menuInner = el;
+
+  menuInner.innerHTML = `
+    <li class="nav-item"><a href="/">Home</a></li>
+    <li class="nav-item"><a href="#/favorit">Favorite</a></li>
+    <li class="nav-item"><a target="_blank" href="https://github.com/yogiprsetya" rel="noopener">About Us</a></li>
+  `;
+});

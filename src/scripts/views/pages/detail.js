@@ -55,8 +55,8 @@ const Detail = {
                 <p class="name">${review.name}</p>
                 <p class="review">${review.review}</p>
                 <small class="date"><i class="far fa-clock"></i> ${review.date}</small>
-              </div>`
-            ).join('')}
+              </div>
+            `).join('')}
           </div>
         </div>
       </div>

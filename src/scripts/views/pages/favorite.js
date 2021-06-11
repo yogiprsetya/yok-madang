@@ -5,10 +5,17 @@ const { BASE_IMAGE_URL } = process.env;
 const Favorite = {
   async render() {
     return `
-      <div class="hero" style="background-image: url('images/heros/hero-image_4.jpg');">
+      <div class="hero">
         <div class="hero-inner">
           <h1 class="hero-title">Pemadam Kelaparan</h1>
           <p class="hero-text">Find the best places to eat</p>
+        </div>
+
+        <div class="hero-image">
+          <picture>
+            <source media="(max-width: 600px)" srcset="images/heros/hero-image-sm.jpg">
+            <img src="images/heros/hero-image-lg.jpg" alt="hero" class="lazyload" />
+          </picture>
         </div>
       </div>
 
@@ -29,7 +36,7 @@ const Favorite = {
     restaurants.forEach(({ id, pictureId, name, rating, city, description }) => {
       restaurantsContainer.innerHTML += `
         <div class="col resto">
-        <img class="resto-img" src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}">
+        <img class="resto-img lazyload" src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}" />
           <div class="rating">
             <small>${city}</small>
             <p>Rating: ${rating}</p>

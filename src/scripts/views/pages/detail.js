@@ -22,6 +22,7 @@ const Detail = {
           <img
             src="${restaurant.pictureId ? BASE_IMAGE_URL + restaurant.pictureId : 'images/no-image.png'}"
             alt="${restaurant.name}"
+            class="lazyload"
           />
 
           <h1>${restaurant.name}</h1>

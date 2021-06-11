@@ -8,11 +8,13 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: relative;
 }
 
 .hero-inner {
 	margin: 0 auto;
-	max-width: 800px
+	max-width: 800px;
+	z-index: 1;
 }
 
 .hero-title {
@@ -26,4 +28,17 @@
 	margin-top: 16px;
 	font-size: 1.8rem;
 	font-weight: 600;
+}
+
+.hero-image {
+	position: absolute;
+	overflow: hidden;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.hero-image img {
+	width: 100%;
 }

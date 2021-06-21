@@ -36,7 +36,7 @@ const Home = {
     restaurants.forEach(({ id, pictureId, name, city, rating, description }) => {
       restaurantsContainer.innerHTML += `
       <div class="col resto">
-        <img class="resto-img lazyload" src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}">
+        <img class="resto-img lazyload" data-src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}">
 
         <div class="rating">
           <small>${city}</small>

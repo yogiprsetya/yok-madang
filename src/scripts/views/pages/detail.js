@@ -20,7 +20,7 @@ const Detail = {
       <div class="restaurant">
         <div class="restaurant-thumbnail">
           <img
-            src="${restaurant.pictureId ? BASE_IMAGE_URL + restaurant.pictureId : 'images/no-image.png'}"
+            data-src="${restaurant.pictureId ? BASE_IMAGE_URL + restaurant.pictureId : 'images/no-image.png'}"
             alt="${restaurant.name}"
             class="lazyload"
           />

@@ -24,6 +24,7 @@ const Favorite = {
           <h2>Explore Restaurant</h2>
 
           <div class="row" id="list"></div>
+          <div class="no-resto"></div>
         </section>
       </main>
     `;
@@ -33,10 +34,14 @@ const Favorite = {
     const restaurants = await FavoriteRestaurant.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#list');
 
+    if (restaurants.length === 0) {
+      document.querySelector('.no-resto').innerHTML = 'Restoran Favorit belum ada.';
+    }
+
     restaurants.forEach(({ id, pictureId, name, rating, city, description }) => {
       restaurantsContainer.innerHTML += `
         <div class="col resto">
-        <img class="resto-img lazyload" src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}" />
+        <img class="resto-img lazyload" data-src="${BASE_IMAGE_URL + pictureId}" alt="${name}" title="${name}" />
           <div class="rating">
             <small>${city}</small>
             <p>Rating: ${rating}</p>
